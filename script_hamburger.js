@@ -1,0 +1,1 @@
+document.getElementById("menu").addEventListener("click",function(){var e=document.getElementById("g_listas");e.style.display="block",this.style.display="none"}),document.getElementById("close").addEventListener("click",function(){var e=document.getElementById("g_listas");e.style.display="none";var t=document.getElementById("menu");t.style.display="block"});

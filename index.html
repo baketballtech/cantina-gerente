@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="logo_5.ico" type="image/x-icon">
+    <style>
+        *{margin:0;padding:0;font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Geneva,Verdana,sans-serif;color:#fff}body{height:100vh;width:100vw;background-color:#cd2424;background-image:url(fundo_index.png);background-repeat:no-repeat;background-position:center center;background-size:cover}#centro{width:90%;height:90%;max-width:400px;max-height:400px;backdrop-filter:blur(4px);background-color:rgba(0,0,0,.266);border-radius:10px;position:relative;top:50%;left:50%;transform:translate(-50%,-50%)}#titulo_login{color:#fff;text-align:center;padding:10px;margin-bottom:20%}.label_centro{display:inline-block;width:20%;min-width:80px}.div_input{padding:15px 10px}.input_centro{background-color:transparent;border:solid 1px #fff;padding:5px;border-radius:4px}input::placeholder{color:rgba(255,255,255,.659)}#btn{padding:6px 20px;background-color:rgba(150,40,40,0);border:solid 1px #fff;border-radius:5px;margin-top:20px;backdrop-filter:blur(20px);position:relative;left:50%;transform:translateX(-50%);transition:background-color 1s ease,border-color 1s ease}#btn:hover{background-color:brown;border-color:brown;transition:background-color 1s ease,border-color 1s ease}@media (max-width:322px){.input_centro,.label_centro{display:block;position:relative;left:50%;transform:translateX(-50%)}.label_centro{padding-bottom:4px}.div_input{position:relative;left:50%;transform:translateX(-50%)}#centro{min-height:98%;max-width:450px}}
+    </style>
+</head>
+<body>
+    <div id="centro">
+        <h1 id="titulo_login">Login</h1>
+        <div id="vertical">
+            <div id="nome" class="div_input">
+                <label for="i_nome" class="label_centro">Nome:</label>
+                <input type="text" id="i_nome" class="input_centro" placeholder="Digite o nome">
+            </div>
+            <div id="password" class="div_input" >
+                <label for="i_seha" class="label_centro">Senha:</label>
+                <input type="text" id="i_senha" class="input_centro" placeholder="Digite a senha">
+            </div>
+            <div id="password_conf" class="div_input" >
+                <label for="i_seha" class="label_centro">Confirme:</label>
+                <input type="text" id="i_conf" class="input_centro" placeholder="Repita a senha">
+            </div>
+        </div>
+        <button id="btn">Read</button>
+    </div>
+
+    <script src="script_confirma.js"></script>
+</body>
+</html>

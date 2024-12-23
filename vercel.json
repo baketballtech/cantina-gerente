@@ -1,0 +1,31 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "/script_servidor.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/dados_transfiridos",
+        "dest": "/script_servidor.js"
+      },
+      {
+        "src": "/dados_gerentes",
+        "dest": "/script_servidor.js"
+      },
+      {
+        "src": "/info",
+        "dest": "/script_servidor.js"
+      },
+      {
+        "src":"/dados_novidades",
+        "dest":"/script_servidor.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/script_servidor.js"
+      }
+    ]
+  }
