@@ -24,6 +24,10 @@
         "dest":"/script_servidor.js"
       },
       {
+        "src":"/verefica",
+        "dest":"/script_servidor.js"
+      },
+      {
         "src": "/(.*)",
         "dest": "/script_servidor.js"
       }

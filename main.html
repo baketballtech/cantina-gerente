@@ -9,164 +9,165 @@
     <link rel="stylesheet" href="style_novidades.css">
     <link rel="stylesheet" href="style_novidades_bd.css">
     <link rel="shortcut icon" href="logo_5.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style_verifica.css">
 </head>
 <body>
-    <div id="central">
-        <div id="linha"><img src="menu_2(1).png" alt="img" id="menu"></div>
-        <ul id="g_listas">
-            <img src="close_3.png" alt="img" id="close">
-            <li class="listas_" id="add_lista">Adicionar produto</li>
-            <li class="listas_" id="edd_lista">Editar porduto</li>
-            <li class="listas_" id="rem_lista">Remover produto</li>
-            <li class="listas_" id="nov_lista">Novidades</li>
-        </ul>
-    </div>
-    <div id="add" class="dd">
-        <div id="destaque_add" class="destaque">
-            <img src="troca_2.jpg" alt="" id="trocas" class="troca_img">
+    <article id="artigo_veri">
+        <section id="veri_sec">
+            <label for="verifica" id="l_veri">Codigo de Verificação</label>
+            <input type="password" id="verifica" placeholder="Digite o codigo de verificação">
+            <input type="password" id="verifica_conf" placeholder="Repita o codigo">
+            <button id="verifica_btn">Confirmar</button>
+        </section>
+    </article>
+    <div id="chefe">
+        <div id="central">
+            <div id="linha"><img src="menu_2(1).png" alt="img" id="menu"></div>
+            <ul id="g_listas">
+                <img src="close_3.png" alt="img" id="close">
+                <li class="listas_" id="add_lista">Adicionar produto</li>
+                <li class="listas_" id="edd_lista">Editar porduto</li>
+                <li class="listas_" id="rem_lista">Remover produto</li>
+                <li class="listas_" id="nov_lista">Novidades</li>
+            </ul>
         </div>
-        <div id="adicionar" class="dados">
-            <div id="centro_add">
-                <h1 id="titulo_add" class="titulos">Adicionar produtos</h1>
-                <div id="imagens" class="imagens_">
-                    <img src="img.png" alt="" id="img_h2" class="img_3">
-                    <img src="img_black.png" alt="" class="img_3">
-                </div>
-                <div id="info_add" class="info">
-                    <div class="info_impar">
-                        <label for="nome" class="input_add">Nome</label>
-                        <input type="text" id="nome" class="caixas">
-                    </div> 
-                    <div class="info_impar">
-                        <label for="preco" class="input_add">Preço</label>
-                        <input type="number" id="preco" class="caixas">
-                    </div>                    
-                    <div class="info_impar">
-                        <label for="quantidade" class="input_add">Quantidade</label>
-                        <input type="text" id="quantidade" class="caixas">
-                    </div>
-                    <div class="info_impar">
-                        <label for="categoria" class="input_add">Classe</label>
-                        <select name="categoriaN" id="categoria">
-                            <option value="FastFood" class="opt_classe">FastFood</option>
-                            <option value="Bebida" class="opt_classe">Bebidda</option>
-                            <option value="Refeição" class="opt_classe">Refeição</option>
-                            <option value="Sobremesa" class="opt_classe">Sobremesa</option>
-                        </select>
-                    </div> 
-                    <button id="pronto_add" class="pronto" onclick="conector('add')">Adicionar</button>
-                </div>
+        <div id="add" class="dd">
+            <div id="destaque_add" class="destaque">
+                <img src="troca_2.jpg" alt="" id="trocas" class="troca_img">
             </div>
-        </div>
-
-    </div>
-    <!--div de edeição de produtos-->
-
-    <div id="edd" class="dd">
-        <div id="destaque_edd" class="destaque">
-            <img src="troca_1.jpg" alt="" id="trocas" class="troca_img">
-        </div>
-        <div id="editar" class="dados_">
-            <div id="centro_edd">
-                <h1 id="titulo_edd" class="titulos">Editar produto</h1>
-                <div id="imagens_edd" class="imagens_">
-                    <img src="img.png" alt="" id="img_h2" class="img_3">
-                    <img src="img_black.png" alt="" class="img_3">
-                </div>
-                <div id="info_2" class="info">
-                    <div class="info_impar">
-                        <label for="nome_edd" class="input_add">Nome</label>
-                        <input type="text" id="nome_edd" class="caixas">
+            <div id="adicionar" class="dados">
+                <div id="centro_add">
+                    <h1 id="titulo_add" class="titulos">Adicionar produtos</h1>
+                    <div id="imagens" class="imagens_">
+                        <img src="img.png" alt="" id="img_h2" class="img_3">
+                        <img src="img_black.png" alt="" class="img_3">
                     </div>
-                    <div class="info_impar">
-                        <label for="preco_edd" class="input_add">Preço</label>
-                        <input type="number" id="preco_edd" class="caixas">
-                    </div>                    
-                    <div class="info_impar">
-                        <label for="quantidade" class="input_add">Quantidade</label>
-                        <input type="text" id="quantidade_edd" class="caixas">
+                    <div id="info_add" class="info">
+                        <div class="info_impar">
+                            <label for="nome" class="input_add">Nome</label>
+                            <input type="text" id="nome" class="caixas">
+                        </div>
+                        <div class="info_impar">
+                            <label for="preco" class="input_add">Preço</label>
+                            <input type="number" id="preco" class="caixas">
+                        </div>
+                        <div class="info_impar">
+                            <label for="quantidade" class="input_add">Quantidade</label>
+                            <input type="text" id="quantidade" class="caixas">
+                        </div>
+                        <div class="info_impar">
+                            <label for="categoria" class="input_add">Classe</label>
+                            <select name="categoriaN" id="categoria">
+                                <option value="FastFood" class="opt_classe">FastFood</option>
+                                <option value="Bebida" class="opt_classe">Bebidda</option>
+                                <option value="Refeição" class="opt_classe">Refeição</option>
+                                <option value="Sobremesa" class="opt_classe">Sobremesa</option>
+                            </select>
+                        </div>
+                        <button id="pronto_add" class="pronto" onclick="conector('add')">Adicionar</button>
                     </div>
-                    <div class="info_impar">
-                        <label for="categoria_edd" class="input_add">Classe</label>
-                        <select name="categoriaN_edd" id="categoria_edd">
-                            <option value="atual">Permanencer</option>
-                            <option value="FastFood" class="opt_classe">FastFood</option>
-                            <option value="Bebida" class="opt_classe">Bebidda</option>
-                            <option value="Refeição" class="opt_classe">Refeição</option>
-                            <option value="Sobremesa" class="opt_classe">Sobremesa</option>
-                        </select>
-                    </div> 
-                    <button id="pronto_edd" class="pronto" onclick="conector('edd')">Editar</button>
                 </div>
             </div>
         </div>
-
-    </div>
-
-    <!--Remover produtos-->
-    <div id="rem" class="dd">
-        <div id="destaque_rem" class="destaque">
-            <img src="troca_3.jpg" alt="" id="trocas" class="troca_img">
-        </div>
-        <div id="remover" class="dados_">
-            <div id="centro_rem">
-                <h1 id="titulo_rem" class="titulos">Remover produto</h1>
-                <div id="info_3" class="info">
-                    <div class="info_impar">
-                        <label for="nome_rem" class="input_add">Nome</label>
-                        <input type="text" id="nome_rem" class="caixas">
+        <!--div de edeição de produtos-->
+        <div id="edd" class="dd">
+            <div id="destaque_edd" class="destaque">
+                <img src="troca_1.jpg" alt="" id="trocas" class="troca_img">
+            </div>
+            <div id="editar" class="dados_">
+                <div id="centro_edd">
+                    <h1 id="titulo_edd" class="titulos">Editar produto</h1>
+                    <div id="imagens_edd" class="imagens_">
+                        <img src="img.png" alt="" id="img_h2" class="img_3">
+                        <img src="img_black.png" alt="" class="img_3">
                     </div>
-
-                    <div class="info_impar">
-                        <label for="codigo_rem" class="input_add">Codigo</label>
-                        <input type="text" id="codigo_rem" class="caixas">
+                    <div id="info_2" class="info">
+                        <div class="info_impar">
+                            <label for="nome_edd" class="input_add">Nome</label>
+                            <input type="text" id="nome_edd" class="caixas">
+                        </div>
+                        <div class="info_impar">
+                            <label for="preco_edd" class="input_add">Preço</label>
+                            <input type="number" id="preco_edd" class="caixas">
+                        </div>
+                        <div class="info_impar">
+                            <label for="quantidade" class="input_add">Quantidade</label>
+                            <input type="text" id="quantidade_edd" class="caixas">
+                        </div>
+                        <div class="info_impar">
+                            <label for="categoria_edd" class="input_add">Classe</label>
+                            <select name="categoriaN_edd" id="categoria_edd">
+                                <option value="atual">Permanencer</option>
+                                <option value="FastFood" class="opt_classe">FastFood</option>
+                                <option value="Bebida" class="opt_classe">Bebidda</option>
+                                <option value="Refeição" class="opt_classe">Refeição</option>
+                                <option value="Sobremesa" class="opt_classe">Sobremesa</option>
+                            </select>
+                        </div>
+                        <button id="pronto_edd" class="pronto" onclick="conector('edd')">Editar</button>
                     </div>
-
-                    <div class="info_impar">
-                        <label for="confirma_rem" class="input_add">Confirma</label>
-                        <input type="text" id="confirma_rem" class="caixas">
-                    </div>
-
-                    <button id="pronto_rem" class="pronto" onclick="conector('rem')">Remover</button>
                 </div>
             </div>
         </div>
-
-    </div>
-
-    <h1 id="titulo_nov">Novidades</h1>
-    <div id="novidades_">
-        <div id="centro_nov">
-            <div id="atual_nov" class="dados_novidade">
-                <div id="delete_img"><img src="delete_2.png" alt="delete" id="delete_nov"><h2 id="delete_h2">Delete</h2></div>
+        <!--Remover produtos-->
+        <div id="rem" class="dd">
+            <div id="destaque_rem" class="destaque">
+                <img src="troca_3.jpg" alt="" id="trocas" class="troca_img">
             </div>
-            <div id="atualizar_nov" class="dados_novidade">
-                <img src="atualizar_imagem.png" alt="img" id="atualizar_imagem">
+            <div id="remover" class="dados_">
+                <div id="centro_rem">
+                    <h1 id="titulo_rem" class="titulos">Remover produto</h1>
+                    <div id="info_3" class="info">
+                        <div class="info_impar">
+                            <label for="nome_rem" class="input_add">Nome</label>
+                            <input type="text" id="nome_rem" class="caixas">
+                        </div>
+                        <div class="info_impar">
+                            <label for="codigo_rem" class="input_add">Codigo</label>
+                            <input type="text" id="codigo_rem" class="caixas">
+                        </div>
+                        <div class="info_impar">
+                            <label for="confirma_rem" class="input_add">Confirma</label>
+                            <input type="text" id="confirma_rem" class="caixas">
+                        </div>
+                        <button id="pronto_rem" class="pronto" onclick="conector('rem')">Remover</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="new_nov">
-        <div id="fecha">
-            <img src="close_3_black.png" alt="fecha aqui" id="fecha_">
-        </div>
-        <div id="esquerda">
-            <div id="t_m" class="caixa_li">
-                <label for="titulo_new" class="valores_l">Titulo</label>
-                <input type="text" id="titulo_new" placeholder="Nome do produto" class="valores_i">
+        <h1 id="titulo_nov">Novidades</h1>
+        <div id="novidades_">
+            <div id="centro_nov">
+                <div id="atual_nov" class="dados_novidade">
+                    <div id="delete_img"><img src="delete_2.png" alt="delete" id="delete_nov"><h2 id="delete_h2">Delete</h2></div>
+                </div>
+                <div id="atualizar_nov" class="dados_novidade">
+                    <img src="atualizar_imagem.png" alt="img" id="atualizar_imagem">
+                </div>
             </div>
-            <div id="prec_new" class="caixa_li">
-                <label for="preco_new" class="valores_l">Preço</label>
-                <input type="number" id="preco_new" placeholder="Preço do produto" class="valores_i">
-            </div>
-            <textarea name="texterea" id="texx" cols="30" rows="10"></textarea>
-            <button id="pronto_nov" onclick="outros_dados()">Pronto</button>
         </div>
-        <div id="new_img" onclick="apanhaFoto()"></div>
+        <div id="new_nov">
+            <div id="fecha">
+                <img src="close_3_black.png" alt="fecha aqui" id="fecha_">
+            </div>
+            <div id="esquerda">
+                <div id="t_m" class="caixa_li">
+                    <label for="titulo_new" class="valores_l">Titulo</label>
+                    <input type="text" id="titulo_new" placeholder="Nome do produto" class="valores_i">
+                </div>
+                <div id="prec_new" class="caixa_li">
+                    <label for="preco_new" class="valores_l">Preço</label>
+                    <input type="number" id="preco_new" placeholder="Preço do produto" class="valores_i">
+                </div>
+                <textarea name="texterea" id="texx" cols="30" rows="10"></textarea>
+                <button id="pronto_nov" onclick="outros_dados()">Pronto</button>
+            </div>
+            <div id="new_img" onclick="apanhaFoto()"></div>
         
-        <form action="">
-            <input type="file" name="inp_nome" id="file_apanha" style="display: none;">
-        </form>
-
+            <form action="">
+                <input type="file" name="inp_nome" id="file_apanha" style="display: none;">
+            </form>
+        </div>
     </div>
 
     <script src="script_conector.js"></script>
@@ -174,5 +175,6 @@
     <script src="script_input_file.js"></script>
     <script src="script_basico.js"></script>
     <script src="script_link.js"></script>
+    <script src="script_verifica.js"></script>
 </body>
 </html>
