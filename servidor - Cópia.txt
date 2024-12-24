@@ -1,0 +1,122 @@
+var express=require("express")
+var multer=require("multer")
+var cors=require("cors")
+const fs = require('fs');
+const path = require('path');
+
+const { Pool } = require("pg"); // Use pg para PostgreSQL
+const helmet = require("helmet");
+app.use(helmet.noSniff());
+app.use(helmet.xssFilter());
+app.use(helmet.crossOriginEmbedderPolicy());
+app.use(helmet.ieNoOpen());
+app.use(
+  helmet.hsts({
+    maxAge: 31536000,
+    includeSubDomains: true,
+    preload: true,
+  })
+);
+
+var app=express()
+app.use(express.json())
+app.use(cors())
+
+// Configurações do banco de dados
+const pool = new Pool({
+    host : "ep-shy-haze-a5fn30na-pooler.us-east-2.aws.neon.tech",
+    user : "neondb_owner",
+    password : "8XJOeoMIWr0U",
+    database : "neondb",
+    port: 5432, // A porta padrão do PostgreSQL
+    ssl: {
+      rejectUnauthorized: false, // Desative a verificação de certificado SSL
+    },
+  });
+  
+  
+  // Conexão ao banco de dados
+  pool.connect()
+    .then(() => {
+      console.log('Conexão ao banco de dados estabelecida com sucesso!');
+    })
+    .catch(err => {
+      console.error('Erro ao conectar ao banco de dados:', err);
+    });
+
+app.post("/dados_gerentes",async (req,res)=>{
+    var dados=req.body
+    var comando=dados.comando
+    console.log(`${comando}`)
+    console.log("dados apnhados",dados)
+    try {
+        const result = await pool.query(`${comando}`);
+        if (result.rows.length === 0) {
+          console.log('Nenhum dado encontrado na tabela cantina_mira.');
+          return res.json([]); // Retorna um array vazio se não houver dados
+        }
+      } catch (err) {
+        console.error('Erro ao executar a consulta:', err);
+        res.status(500).json({ error: 'Erro ao obter dados', details: err.message });
+      }
+})
+
+
+
+app.post("/dados_novidades",async (req,res)=>{
+  var dados=req.body
+  var comando=dados.comando
+  console.log(`${comando}`)
+  console.log("dados apnhados",dados)
+  var caminho=dados.caminho
+  console.log(caminho)
+
+  const origem = path.join(caminho); 
+  const destino = path.join(__dirname);
+  
+  fs.copyFile(origem, destino, (err) => {
+      if (err) {
+          console.error('Erro ao copiar o arquivo:', err);
+      } else {
+          console.log('Imagem copiada com sucesso!');
+      }
+  });
+  try {
+      const result = await pool.query(`${comando}`);
+      if (result.rows.length === 0) {
+        console.log('Nenhum dado encontrado na tabela cantina_mira.');
+        return res.json([]); // Retorna um array vazio se não houver dados
+      }
+    } catch (err) {
+      console.error('Erro ao executar a consulta:', err);
+      res.status(500).json({ error: 'Erro ao obter dados', details: err.message });
+    }
+
+
+})
+
+app.get('/dados_transfiridos', async (req,res)=>{
+  try {
+    const comando='select novidade,imagem_nome,titulo,preco from novidades'
+    const result = await pool.query(`${comando}`);
+    if (result.rows.length === 0) {
+      console.log('Nenhum dado encontrado na tabela cantina_mira.');
+      return res.json([]); // Retorna um array vazio se não houver dados
+    }
+    console.log('Dados pegos:', result.rows);
+    var dd=JSON.stringify(result.rows)
+    res.json(dd); // Retorna os dados em formato JSON
+  } catch (err) {
+    console.error('Erro ao executar a consulta:', err);
+    res.status(500).json({ error: 'Erro ao obter dados', details: err.message });
+  }
+})
+
+const porta = 8000;
+app.listen(porta, (err) => {
+  if (err) {
+    console.error('Tivemos um pequeno erro: ' + err);
+    return;
+  }
+  console.log('Servidor conectado na porta ' + porta);
+});
